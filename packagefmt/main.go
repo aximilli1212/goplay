@@ -15,4 +15,7 @@ func main() {
 
 	//%v - Replace by any type
 	//%T - Show me the type :: typeOf()
+	//%f - Replace with Fload
+	//$.3f - Convert float to show 3 decimal point
+
 }
