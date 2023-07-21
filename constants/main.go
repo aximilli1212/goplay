@@ -29,4 +29,12 @@ func main() {
 	//3. You cannot use a constant to initialize a variable
 	//4. You can initialize a const with a builtIn func eg: len
 
+	//Note that `iota` is used for values that increment by 1 with every use
+	const (
+		x = -(iota + 2)
+		_ //NB: -3 is skipped because of the blank
+		y
+		z
+	)
+	fmt.Println(x, y, z)
 }
