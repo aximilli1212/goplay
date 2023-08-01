@@ -7,6 +7,11 @@ type Room struct {
 	cleaned bool
 }
 
+type Product struct {
+	Price int
+	Name  string
+}
+
 func checkCleanliness(rooms [4]Room) {
 	for i := 0; i < len(rooms); i++ {
 		room := rooms[i]
@@ -18,6 +23,16 @@ func checkCleanliness(rooms [4]Room) {
 	}
 }
 
+func totalCost(prods [4]Product) int {
+	sum := 0
+	for i := 0; i <= len(prods); i++ {
+		prod := prods[i]
+		sum += prod.Price
+	}
+
+	return sum
+}
+
 func main() {
 
 	hotelRooms := [...]Room{
@@ -27,6 +42,12 @@ func main() {
 		{name: "Reception"},
 	}
 
+	ShoppingList := [4]Product{
+		{500, "KeySoap"},
+		{500, "Mango Soap"},
+		{500, "Rain Soap"},
+	}
+
 	checkCleanliness(hotelRooms)
 
 	fmt.Println("Hold on... Performing cleaning...")
@@ -34,4 +55,14 @@ func main() {
 	hotelRooms[2].cleaned = true
 
 	checkCleanliness(hotelRooms)
+
+	fmt.Println("Last item:", ShoppingList[3])
+	fmt.Println("Lenght of items:", len(ShoppingList))
+	fmt.Println("Last item:", ShoppingList[3])
+	fmt.Println("Cost of items", totalCost(ShoppingList))
+
+	ShoppingList[3].Name = "MOngoosa"
+	ShoppingList[3].Price = 566
+
+	fmt.Println(ShoppingList)
 }
