@@ -25,7 +25,7 @@ func checkCleanliness(rooms [4]Room) {
 
 func totalCost(prods [4]Product) int {
 	sum := 0
-	for i := 0; i <= len(prods); i++ {
+	for i := 0; i < len(prods); i++ {
 		prod := prods[i]
 		sum += prod.Price
 	}
@@ -56,9 +56,9 @@ func main() {
 
 	checkCleanliness(hotelRooms)
 
-	fmt.Println("Last item:", ShoppingList[3])
+	fmt.Println("Last item:", ShoppingList[2])
 	fmt.Println("Lenght of items:", len(ShoppingList))
-	fmt.Println("Last item:", ShoppingList[3])
+	fmt.Println("Last item:", ShoppingList[2])
 	fmt.Println("Cost of items", totalCost(ShoppingList))
 
 	ShoppingList[3].Name = "MOngoosa"
