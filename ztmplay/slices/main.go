@@ -1,8 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Part string
+
+func showPart(line []Part) {
+	for i, part := range line {
+		fmt.Println(part, i)
+	}
+}
 
 func main() {
 
@@ -14,12 +22,17 @@ func main() {
 	fmt.Println("Original Assembly:", assemblyLine)
 
 	//  - Add two new parts to the line
-	assemblyLine = append(assemblyLine, "Wing", "Steering Wheel")
+	assemblyLine = append(assemblyLine, "Wing", "Steering")
 	fmt.Println("Updated Assembly: ", assemblyLine)
 
 	//  - Slice the assembly line, so it contains only the two new parts
+	assemblyLine = assemblyLine[3:]
+	fmt.Println(assemblyLine)
 	//  - Print out the contents of the assembly line at each step
 	//--Notes:
 	//* Your program output should list 3 parts, then 5 parts, then 2 parts
+
+	//You can iterate over a slice using range
+	showPart(assemblyLine)
 
 }
