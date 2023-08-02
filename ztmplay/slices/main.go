@@ -11,9 +11,12 @@ func main() {
 	//* Perform the following:
 	//  - Create an assembly line having any three parts
 	assemblyLine := []Part{"Screws", "Bolts", "Nuts"}
-	fmt.Println(assemblyLine)
+	fmt.Println("Original Assembly:", assemblyLine)
 
 	//  - Add two new parts to the line
+	assemblyLine = append(assemblyLine, "Wing", "Steering Wheel")
+	fmt.Println("Updated Assembly: ", assemblyLine)
+
 	//  - Slice the assembly line, so it contains only the two new parts
 	//  - Print out the contents of the assembly line at each step
 	//--Notes:
