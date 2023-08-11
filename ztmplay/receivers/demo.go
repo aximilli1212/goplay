@@ -24,12 +24,13 @@ func (lot *ParkingLot) vacateSpace(spaceNum int) {
 
 func main() {
 
-	myLot := ParkingLot{spaces: make([]Space, 10)}
+	myLot := ParkingLot{spaces: make([]Space, 5)}
 
 	fmt.Println("initial:", myLot)
 
 	myLot.occupySpace(1)
 	occupySpace(&myLot, 2)
 	fmt.Println("After occupied:", myLot)
-
+	myLot.vacateSpace(4)
+	fmt.Println("After vacate 3:", myLot)
 }
